@@ -1,9 +1,7 @@
 package org.shift.dao;
 
-import java.util.List;
-
+import org.shift.util.dao.IBaseDAO;
 import org.shift.vo.Emp;
 
-public interface IEmpDAO {
-	public List<Emp> findAll();
+public interface IEmpDAO extends IBaseDAO<Integer, Emp>{
 }

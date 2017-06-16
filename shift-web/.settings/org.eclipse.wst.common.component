@@ -4,6 +4,12 @@
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="shift-service-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/shift-service/shift-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="shift-api-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/shift-api/shift-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="shift-web"/>
         <property name="java-output-path" value="/shift-web/target/classes"/>
     </wb-module>

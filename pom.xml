@@ -13,6 +13,8 @@
 		<shift.version>0.0.1</shift.version>
 		<!-- 以下为使用依赖包的版本配置 -->
 		<junit.version>4.12</junit.version>
+		<!-- JSON开发包 -->
+		<json.version>2.4</json.version>
 		<!-- web项目依赖包版本 -->
 		<jsp.version>2.3.1</jsp.version>
 		<jstl.version>1.2</jstl.version><!-- 这个还没用到 -->
@@ -24,7 +26,7 @@
 		<mchange.version>0.2.12</mchange.version>
 		<!-- 定义fileupload组件依赖包 -->
 		<fileupload.version>1.3.2</fileupload.version>
-		<commons-io.version>2.5</commons-io.version>		
+		<commons-io.version>2.5</commons-io.version>
 		<commons-collections.version>3.2.2</commons-collections.version><!-- 这个还没用到 -->
 		<!-- spring开发包 -->
 		<spring.version>4.3.8.RELEASE</spring.version>
@@ -33,11 +35,13 @@
 		<!-- Mybatis相关开发包 -->
 		<mybatis-version>3.4.4</mybatis-version>
 		<mybatis-spring-version>1.3.1</mybatis-spring-version>
+		<!-- 日志显示组件 第一组 -->
+		<commons-logging.version>1.1.3</commons-logging.version>
+		<slf4j.version>1.7.21</slf4j.version>
 
 
 
-		<!-- JSON开发包 -->
-		<json.version>2.4</json.version>
+
 
 
 
@@ -52,10 +56,9 @@
 
 
 
-		
 
-		<logback-version>1.1.3</logback-version>
-		<org.slf4j-version>1.7.5</org.slf4j-version>
+
+
 
 		<commons-beanutils-version>1.9.1</commons-beanutils-version>
 		<commons-lang3-version>3.1</commons-lang3-version>
@@ -84,10 +87,28 @@
 				<version>${shift.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>cn.mldn</groupId>
+				<artifactId>shift-service</artifactId>
+				<version>${shift.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.mldn</groupId>
+				<artifactId>shift-util</artifactId>
+				<version>${shift.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
+			</dependency>
+			<!--JSON -->
+			<dependency>
+				<groupId>net.sf.json-lib</groupId>
+				<artifactId>json-lib</artifactId>
+				<version>${net.sf.json-version}</version>
+				<classifier>jdk15</classifier>
+				<scope>compile</scope>
 			</dependency>
 			<!--web项目的依赖包s -->
 			<dependency>
@@ -99,6 +120,11 @@
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
 				<version>${servlet.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${jstl.version}</version>
 			</dependency>
 			<!--web项目的依赖包e -->
 			<!--mysql数据库 -->
@@ -175,6 +201,11 @@
 				<artifactId>spring-test</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 			<!--spring对web的支持 -->
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -187,6 +218,36 @@
 				<version>${spring.version}</version>
 			</dependency>
 			<!--spring依赖包e -->
+			<!--mybatis依赖包s -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis-spring-version}</version>
+			</dependency>
+			<!--mybatis依赖包e -->
+			<!--日志s -->
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>${commons-logging.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<!--日志e -->
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -275,5 +336,6 @@
 		<module>shift-api</module>
 		<module>shift-service</module>
 		<module>shift-web</module>
+		<module>shift-util</module>
 	</modules>
 </project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 此处定义的是VO类与SQL语句之间的处理关系，namespace描述的是一个命名空间 -->
+<mapper namespace="org.shift.dao.IEmpDAO">
+	<!-- 实现增加的SQL语句，paraemterType表示参数类型 -->
+	<insert id="doCreate" parameterType="Emp" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO emp(name,sex,phone,id_card,birthday,hire_date,education_degree,team_id) VALUES (#{name},#{sex},#{phone},#{id_card},#{birthday},#{hire_date},#{education_degree},#{team_id});
+	</insert>
+	<select id="findAll" resultType="Emp">
+		SELECT id,name,sex,phone,id_card,birthday,hire_date,education_degree,create_id,last_update_user_id,create_time,update_time,team_id FROM emp ;
+	</select>
+</mapper>

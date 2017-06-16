@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration   
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>	<!-- 启用系统中的二级缓存配置 -->
+		<setting name="cacheEnabled" value="true" />
+	</settings>
+	<typeAliases>	<!-- 配置VO类的别名操作，以简化映射文件的类型编写 -->
+		<package name="org.shift.vo" />
+	</typeAliases>
+
+</configuration>
